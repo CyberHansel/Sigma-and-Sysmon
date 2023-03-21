@@ -29,4 +29,8 @@ This will load the Sysmon configuration file and start monitoring for the specif
 https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
-https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xm
+
+
+Install sysmon config file: https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml  
+Run with administrator rights `sysmon.exe -accepteula -i sysmonconfig-export.xml`  
+
