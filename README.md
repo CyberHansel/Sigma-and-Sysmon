@@ -1,10 +1,10 @@
 # Sigma-and-Sysmon
 
 
-Download or clone Sigma repository:  https://github.com/SigmaHQ/sigma
-Install python: https://www.python.org/downloads/ 
-Install Sigma's dependencies: Sigma requires several Python packages to run correctly: pip install -r requirements.txt
-Test if all ok: python sigmac --version
+Download or clone Sigma repository:  https://github.com/SigmaHQ/sigma  
+Install python: https://www.python.org/downloads/   
+Install Sigma's dependencies: Sigma requires several Python packages to run correctly: `pip install -r requirements.txt`  
+Test if all ok: `python sigmac --version`  
 
 
 It contains the rule base in the folder “./rules” and the Sigma rule compiler “./tools/sigmac”  
