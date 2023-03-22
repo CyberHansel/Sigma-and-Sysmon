@@ -33,5 +33,5 @@ https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
 Install sysmon config file: https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml  
 Install first time - Run with administrator rights `sysmon.exe -accepteula -i sysmonconfig-export.xml`   
-Or add it into existing Sysmon configuration sysmon -c sysmonconfig-export.xml`
+Or add it into existing Sysmon configuration `sysmon -c sysmonconfig-export.xml`
 
