@@ -38,9 +38,9 @@ Or add it into existing Sysmon configuration `sysmon -c sysmonconfig-export.xml`
 ## Suricata (Instead of Snort)
 Download https://suricata.io/download/  
 
-## Wazuh (Instead of OSSEC)  
+## Wazuh (Instead of OSSEC) server instals on Linux, agent can be win or unix
 https://documentation.wazuh.com/current/installation-guide/index.html  
 
-
+## Elastic Stack: (Elasticsearch, Logstash, and Kibana) 
 
 
