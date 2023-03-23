@@ -30,8 +30,17 @@ https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
 
-
+Download sysmon: https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon  
 Install sysmon config file: https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml  
 Install first time - Run with administrator rights `sysmon.exe -accepteula -i sysmonconfig-export.xml`   
 Or add it into existing Sysmon configuration `sysmon -c sysmonconfig-export.xml`
+
+## Suricata (Instead of Snort)
+Download https://suricata.io/download/  
+
+## Wazuh (Instead of OSSEC)  
+https://documentation.wazuh.com/current/installation-guide/index.html  
+
+
+
 
