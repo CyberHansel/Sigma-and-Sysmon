@@ -42,5 +42,9 @@ Download https://suricata.io/download/
 https://documentation.wazuh.com/current/installation-guide/index.html  
 
 ## Elastic Stack: (Elasticsearch, Logstash, and Kibana) 
+https://www.elastic.co/downloads/elasticsearch  
+https://www.elastic.co/downloads/kibana  
+https://www.elastic.co/downloads/  
+https://www.elastic.co/downloads/logstash  
 
 
