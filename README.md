@@ -1,4 +1,4 @@
-# Sigma-and-Sysmon
+# Sigma-and-Sysmon-test
 
 
 Download or clone Sigma repository:  https://github.com/SigmaHQ/sigma  
