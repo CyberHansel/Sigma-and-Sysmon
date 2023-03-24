@@ -46,9 +46,11 @@ https://www.elastic.co/downloads/elasticsearch
 https://www.elastic.co/downloads/kibana  
 https://www.elastic.co/downloads/logstash  
 
+https://www.youtube.com/watch?v=BybAetckH88
+
 https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html  
 elasticsearch\config\elasticsearch.yml file, inside copy:  
 `action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*`   
-
+Next open cmd - go into
 
 
