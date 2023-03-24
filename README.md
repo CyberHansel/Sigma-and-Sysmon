@@ -1,4 +1,4 @@
-# Sigma-and-Sysmon-test
+# Sigma-and-Sysmon
 
 
 Download or clone Sigma repository:  https://github.com/SigmaHQ/sigma  
@@ -44,7 +44,11 @@ https://documentation.wazuh.com/current/installation-guide/index.html
 ## Elastic Stack: (Elasticsearch, Logstash, and Kibana) 
 https://www.elastic.co/downloads/elasticsearch  
 https://www.elastic.co/downloads/kibana  
-https://www.elastic.co/downloads/  
 https://www.elastic.co/downloads/logstash  
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html  
+elasticsearch\config\elasticsearch.yml file, inside copy:  
+`action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*`   
+
 
 
