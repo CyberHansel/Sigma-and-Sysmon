@@ -49,8 +49,15 @@ https://www.elastic.co/downloads/logstash
 https://www.youtube.com/watch?v=BybAetckH88
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html  
-elasticsearch\config\elasticsearch.yml file, inside copy:  
+1.) elasticsearch\config\elasticsearch.yml file, inside copy:  
 `action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*`   
-Next open cmd - go into
+2.) Next open cmd - `\elasticsearch-8.6.2\bin>elasticsearch.bat` launch bat file and wait for line "Elasticsearch security features have been automatically configured!" Save 256hash, password and token.
+3.) Copy to config/elasticsearch.yml data from cmd bat output into .yml file:  
+xpack.security.http.ssl:
+  enabled: false  
+xpack.security.transport.ssl:
+  enabled: false  
+4.)Launch elasticsearch.bat again - it will launch web server now. To connect use localhost:9200. User: `elastic` , password from first .bat run.  
+
 
 
