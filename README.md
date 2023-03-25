@@ -44,20 +44,47 @@ https://documentation.wazuh.com/current/installation-guide/index.html
 ## Elastic Stack: (Elasticsearch, Logstash, and Kibana) 
 https://www.elastic.co/downloads/elasticsearch  
 https://www.elastic.co/downloads/kibana  
-https://www.elastic.co/downloads/logstash  
+https://www.elastic.co/downloads/logstash   
+`reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 0 /f`
 
 https://www.youtube.com/watch?v=BybAetckH88
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html  
 1.) elasticsearch\config\elasticsearch.yml file, inside copy:  
 `action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*`   
-2.) Next open cmd - `\elasticsearch-8.6.2\bin>elasticsearch.bat` launch bat file and wait for line "Elasticsearch security features have been automatically configured!" Save 256hash, password and token.
+2.) Next open cmd - `\elasticsearch-8.6.2\bin>elasticsearch.bat` launch bat file and wait for line "Elasticsearch security features have been automatically configured!" Save 256hash, password and token.  
 3.) Copy to config/elasticsearch.yml data from cmd bat output into .yml file:  
 xpack.security.http.ssl:
   enabled: false  
 xpack.security.transport.ssl:
   enabled: false  
 4.)Launch elasticsearch.bat again - it will launch web server now. To connect use localhost:9200. User: `elastic` , password from first .bat run.  
+------------------  KIBANA --------------  
+1.) elasticsearch-8.6.2\bin>elasticsearch-reset-password -u kibana_system  
+2.) kibana/config/kibana.yml:  
+  Uncomment:  
+  server.port: 5601  
+  server.host: "localhost"  
+  elasticsearch.hosts: ["http://localhost:9200"]  
+  elasticsearch.username: "kibana_system"  
+  elasticsearch.password: "pass"  copy generated pass  
+3.) Launch \kibana-8.6.2\bin>kibana.bat  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
