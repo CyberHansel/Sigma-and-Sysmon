@@ -45,7 +45,10 @@ https://documentation.wazuh.com/current/installation-guide/index.html
 https://www.elastic.co/downloads/elasticsearch  
 https://www.elastic.co/downloads/kibana  
 https://www.elastic.co/downloads/logstash   
-`reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f`
+`reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f`  
+`Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1`  
+
+`taskkill /f /im explorer.exe & start explorer.exe`
 
 https://www.youtube.com/watch?v=BybAetckH88
 
