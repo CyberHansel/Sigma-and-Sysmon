@@ -8,6 +8,7 @@ Test if all ok: `python sigmac --version`
 
 
 `Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile C:\Windows\config.xml`
+`sysmon64.exe –accepteula –i c:\windows\config.xml`  
 
 It contains the rule base in the folder “./rules” and the Sigma rule compiler “./tools/sigmac”  
 How to change Sigma rule https://www.nextron-systems.com/2018/02/10/write-sigma-rules/  
