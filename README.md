@@ -44,12 +44,15 @@ Download https://suricata.io/download/
 ## Wazuh (Instead of OSSEC) server instals on Linux, agent can be win or unix
 https://documentation.wazuh.com/current/installation-guide/index.html  
 
-## Snort  
+## Snort    		https://zaeemjaved10.medium.com/installing-configuring-snort-2-9-17-on-windows-10-26f73e342780
 
 Install Snort 	https://www.snort.org/downloads  
 Install npcap   https://npcap.com/#download  
 
 Download latest Snort rules     https://www.snort.org/downloads/#rule-downloads   
+Download latest Rules and copy to Snort folder  
+
+etc/snort.conf   configure:  
 
 
 
