@@ -53,9 +53,36 @@ Download latest Snort rules     https://www.snort.org/downloads/#rule-downloads
 Download latest Rules and copy to Snort folder  
 
 etc/snort.conf   configure:  
-
-
-
+	ipvar 10.11.10.1/24 any
+	var RULE_PATH ../rules  
+	var SO_RULE_PATH ../so_rules  
+	var PREPROC_RULE_PATH ../preproc_rules  
+	var WHITE_LIST_PATH ../rules  
+	var BLACK_LIST_PATH ../rules same path as /rules before  
+	182 config logdir: C:\Snort\log  
+	dynamicpreprocessor directory C:\Snort\lib\snort_dynamicpreprocessor  
+	dynamicengine C:\Snort\lib\snort_dynamicengine\sf_engine.dll  
+	
+	COMMENT OUT THESE:  
+	#dynamicdetection directory /usr/local/lib/snort_dynamicrules  
+	#preprocessor normalize_ip4  
+	#preprocessor normalize_tcp: block, rsv, pad, urp, req_urg, req_pay, req_urp, ips, ecn stream  
+	#preprocessor normalize_icmp4  
+	#preprocessor normalize_ip6  
+	#preprocessor normalize_icmp6  
+	
+	"whitelist $WHITE_LIST_PATH/white_list.rules, \		change to "...ATH/white_list, \"
+	"blacklist $BLACK_LIST_PATH/black_list.rules" 		change to "..._PATH/black_list"  
+	
+	Converted back slashes to forward slashes in lines":  
+	"# site specific rules  
+	include $RULE_PATH/local.rules  
+	include $RULE_PATH\app-detect.rules  
+	include $RULE_PATH\attack-responses.rules  
+	include $RULE_PATH\backdoor.rules  
+	include $RULE_PATH\bad-traffic.rules"  
+	
+	
 
 
 
