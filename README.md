@@ -41,6 +41,12 @@ Download https://suricata.io/download/
 ## Wazuh (Instead of OSSEC) server instals on Linux, agent can be win or unix
 https://documentation.wazuh.com/current/installation-guide/index.html  
 
+
+
+
+
+
+
 ## Elastic Stack: (Elasticsearch, Logstash, and Kibana) 
 https://www.elastic.co/downloads/elasticsearch  
 https://www.elastic.co/downloads/kibana  
@@ -51,6 +57,10 @@ https://www.elastic.co/downloads/logstash
 `taskkill /f /im explorer.exe & start explorer.exe`
 
 https://www.youtube.com/watch?v=BybAetckH88
+
+
+`elasticsearch-reset-password -u kibana_system`
+
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html  
 1.) elasticsearch\config\elasticsearch.yml file, inside copy:  
@@ -72,6 +82,25 @@ xpack.security.transport.ssl:
   elasticsearch.username: "kibana_system"  
   elasticsearch.password: "pass"  copy generated pass  
 3.) Launch \kibana-8.6.2\bin>kibana.bat  
+----------------- LOGSTASH ---------------  
+1.) in logstash/bin create new "learn.config"  
+input {
+	stdin {
+	}	
+}
+output {
+	stoutput {
+		codec => rubydebug
+	}
+	elasticsearch {
+	hosts => ["http://localhost:9200"]
+	index => "test.logstash"
+	user => "elastic"
+	password => "b9oeeFKv9ZBqn0S1oLK-"
+	}
+}   
+
+
 
   
   
