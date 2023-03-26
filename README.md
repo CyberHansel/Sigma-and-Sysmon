@@ -7,6 +7,8 @@ Install Sigma's dependencies: Sigma requires several Python packages to run corr
 Test if all ok: `python sigmac --version`  
 
 
+`Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile C:\Windows\config.xml`
+
 It contains the rule base in the folder “./rules” and the Sigma rule compiler “./tools/sigmac”  
 How to change Sigma rule https://www.nextron-systems.com/2018/02/10/write-sigma-rules/  
 
@@ -40,6 +42,14 @@ Download https://suricata.io/download/
 
 ## Wazuh (Instead of OSSEC) server instals on Linux, agent can be win or unix
 https://documentation.wazuh.com/current/installation-guide/index.html  
+
+## Snort  
+
+Install Snort 	https://www.snort.org/downloads  
+Install npcap   https://npcap.com/#download  
+
+
+
 
 
 
