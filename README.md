@@ -49,6 +49,7 @@ https://documentation.wazuh.com/current/installation-guide/index.html
 Install Snort 	https://www.snort.org/downloads  
 Install npcap   https://npcap.com/#download  
 
+Download latest Snort rules     https://www.snort.org/downloads/#rule-downloads   
 
 
 
