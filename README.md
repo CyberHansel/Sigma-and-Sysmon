@@ -63,7 +63,7 @@ xpack.security.transport.ssl:
   enabled: false  
 4.)Launch elasticsearch.bat again - it will launch web server now. To connect use localhost:9200. User: `elastic` , password from first .bat run.  
 ------------------  KIBANA --------------  
-1.) elasticsearch-8.6.2\bin>elasticsearch-reset-password -u kibana_system  
+1.) elasticsearch-8.6.2\bin> `elasticsearch-reset-password -u kibana_system`  
 2.) kibana/config/kibana.yml:  
   Uncomment:  
   server.port: 5601  
