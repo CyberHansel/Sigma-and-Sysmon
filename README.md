@@ -7,8 +7,7 @@ Install Sigma's dependencies: Sigma requires several Python packages to run corr
 Test if all ok: `python sigmac --version`  
 
 
-`Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile C:\Windows\config.xml`
-`sysmon64.exe –accepteula –i c:\windows\config.xml`  
+ 
 
 It contains the rule base in the folder “./rules” and the Sigma rule compiler “./tools/sigmac”  
 How to change Sigma rule https://www.nextron-systems.com/2018/02/10/write-sigma-rules/  
@@ -35,6 +34,11 @@ https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
 Download sysmon: https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon  
 Install sysmon config file: https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml  
+`Invoke-WebRequest -Uri https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml -OutFile C:\Windows\sysmonconfig-export-block.xml`  
+or  
+`Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile C:\Windows\config.xml`
+`sysmon64.exe –accepteula –i c:\windows\config.xml` 
+
 
 Install first time - Run with administrator rights 	`sysmon.exe -accepteula -i -c sysmonconfig-export.xml`   
 Or add it into existing Sysmon configuration 		`sysmon -c sysmonconfig-export.xml`
