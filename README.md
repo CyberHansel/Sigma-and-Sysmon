@@ -37,7 +37,35 @@ Install sysmon config file: https://github.com/Neo23x0/sysmon-config/blob/master
 `Invoke-WebRequest -Uri https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml -OutFile C:\Windows\sysmonconfig-export-block.xml`  
 or  
 `Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile C:\Windows\config.xml`
-`sysmon64.exe –accepteula –i c:\windows\config.xml` 
+`sysmon64.exe –accepteula –i c:\windows\config.xml`   
+
+Creating a separate folder for Sysinternals tools and setting appropriate permissions to restrict access to authorized users only.
+Using a network share with access control lists (ACLs) that limit access to authorized users or groups.  
+
+------------------   
+To use AccessChk, you need to open a command prompt and run the AccessChk command with the appropriate parameters. Here are some examples:
+
+To check the permissions of a specific file:
+
+accesschk.exe -s -d c:\path\to\file.txt
+
+To check the permissions of a specific user or group across multiple files and folders:
+
+accesschk.exe -u username c:\path\to\folder
+
+To check the effective permissions of a user or group on a specific file or folder:
+
+accesschk.exe -e -u username c:\path\to\folder
+
+To list all files and folders that a user or group has access to:
+
+accesschk.exe -w -u username c:\
+
+AccessChk provides detailed output that shows the permissions that are set on each resource, including the user or group that has access and the type of access (such as read, write, or execute). It can also generate reports in various formats, including CSV, XML, and text.
+
+AccessChk is a powerful tool that requires some technical expertise to use effectively. It should be used with caution and only by experienced users who understand the potential risks and limitations of permission analysis tools.  
+--------------------------  
+
 
 
 Install first time - Run with administrator rights 	`sysmon.exe -accepteula -i -c sysmonconfig-export.xml`   
