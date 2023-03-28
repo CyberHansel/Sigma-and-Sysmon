@@ -32,12 +32,34 @@ https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
 
-Download sysmon: https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon  
-Install sysmon config file: https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml  
-`Invoke-WebRequest -Uri https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export-block.xml -OutFile C:\Windows\sysmonconfig-export-block.xml`  
-or  
-`Invoke-WebRequest -Uri https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile C:\Windows\config.xml`
+# Create Sysmon directory
+New-Item -ItemType Directory -Path "C:\Sysmon"
+# Download Sysmon
+Invoke-WebRequest "https://download.sysinternals.com/files/Sysmon.zip" -OutFile "C:\Sysmon\Sysmon.zip"
+# Extract Sysmon
+Expand-Archive "C:\Sysmon\Sysmon.zip" -DestinationPath "C:\Sysmon"
+# Download Sysmon config
+Invoke-WebRequest "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export-block.xml" -OutFile "C:\Sysmon\sysmonconfig-export-block.xml"
+# Install Sysmon as a service
+& "C:\Sysmon\Sysmon.exe" -accepteula -i "C:\Sysmon\sysmonconfig-export-block.xml"
+# Start Sysmon service
+Start-Service -Name Sysmon
+
+
+
+
+
+
+
+
+
+
+
+
 `sysmon64.exe –accepteula –i c:\windows\config.xml`   
+
+* `sysmon -c` shows info about sysmon  
+
 
 Creating a separate folder for Sysinternals tools and setting appropriate permissions to restrict access to authorized users only.
 Using a network share with access control lists (ACLs) that limit access to authorized users or groups.  
