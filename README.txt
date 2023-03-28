@@ -84,7 +84,6 @@ SNORT
 
 
 
-
 Download or clone Sigma repository:  https://github.com/SigmaHQ/sigma  
 
 Install python: https://www.python.org/downloads/   
