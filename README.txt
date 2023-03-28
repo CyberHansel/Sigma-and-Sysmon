@@ -1,20 +1,24 @@
 SYSMON
 
+
 # Create Sysmon directory
+Write-Host "Creating Sysmon directory...
 New-Item -ItemType Directory -Path "C:\Sysmon"
 # Download Sysmon
+Write-Host "Downloading Sysmon...
 Invoke-WebRequest "https://download.sysinternals.com/files/Sysmon.zip" -OutFile "C:\Sysmon\Sysmon.zip"
 # Extract Sysmon
+Write-Host "Extracting Sysmon...
 Expand-Archive "C:\Sysmon\Sysmon.zip" -DestinationPath "C:\Sysmon"
 # Download Sysmon config
+Write-Host "Downloading Sysmon config...
 Invoke-WebRequest "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export-block.xml" -OutFile "C:\Sysmon\sysmonconfig-export-block.xml"
 # Install Sysmon as a service
+Write-Host "Installing Sysmon as a service...
 & "C:\Sysmon\Sysmon.exe" -accepteula -i "C:\Sysmon\sysmonconfig-export-block.xml"
 # Start Sysmon service
+Write-Host "Starting Sysmon service...
 Start-Service -Name Sysmon
-
-
-
 
 
 
