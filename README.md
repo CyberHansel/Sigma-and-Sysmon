@@ -1,7 +1,29 @@
 # Sigma-and-Sysmon
 
+# Create Sysmon directory
+New-Item -ItemType Directory -Path "C:\Sysmon"
+# Download Sysmon
+Invoke-WebRequest "https://download.sysinternals.com/files/Sysmon.zip" -OutFile "C:\Sysmon\Sysmon.zip"
+# Extract Sysmon
+Expand-Archive "C:\Sysmon\Sysmon.zip" -DestinationPath "C:\Sysmon"
+# Download Sysmon config
+Invoke-WebRequest "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export-block.xml" -OutFile "C:\Sysmon\sysmonconfig-export-block.xml"
+# Install Sysmon as a service
+& "C:\Sysmon\Sysmon.exe" -accepteula -i "C:\Sysmon\sysmonconfig-export-block.xml"
+# Start Sysmon service
+Start-Service -Name Sysmon
+
+
+
+
+
+
+
+
+
 
 Download or clone Sigma repository:  https://github.com/SigmaHQ/sigma  
+
 Install python: https://www.python.org/downloads/   
 Install Sigma's dependencies: Sigma requires several Python packages to run correctly: `pip install -r requirements.txt`  
 Test if all ok: `python sigmac --version`  
@@ -32,18 +54,7 @@ https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
 
-# Create Sysmon directory
-New-Item -ItemType Directory -Path "C:\Sysmon"
-# Download Sysmon
-Invoke-WebRequest "https://download.sysinternals.com/files/Sysmon.zip" -OutFile "C:\Sysmon\Sysmon.zip"
-# Extract Sysmon
-Expand-Archive "C:\Sysmon\Sysmon.zip" -DestinationPath "C:\Sysmon"
-# Download Sysmon config
-Invoke-WebRequest "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export-block.xml" -OutFile "C:\Sysmon\sysmonconfig-export-block.xml"
-# Install Sysmon as a service
-& "C:\Sysmon\Sysmon.exe" -accepteula -i "C:\Sysmon\sysmonconfig-export-block.xml"
-# Start Sysmon service
-Start-Service -Name Sysmon
+
 
 
 
@@ -196,24 +207,3 @@ output {
 	password => "b9oeeFKv9ZBqn0S1oLK-"
 	}
 }   
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
