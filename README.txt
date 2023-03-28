@@ -10,7 +10,7 @@ Invoke-WebRequest "https://download.sysinternals.com/files/Sysmon.zip" -OutFile 
 # Extract Sysmon
 Write-Host "Extracting Sysmon...
 Expand-Archive "C:\Sysmon\Sysmon.zip" -DestinationPath "C:\Sysmon"
-# Download Sysmon config
+# Download Sysmon config for Neo23, alternatives SwiftOnSecurity and olafhartong
 Write-Host "Downloading Sysmon config...
 Invoke-WebRequest "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export-block.xml" -OutFile "C:\Sysmon\sysmonconfig-export-block.xml"
 # Install Sysmon as a service
@@ -19,7 +19,9 @@ Write-Host "Installing Sysmon as a service...
 # Start Sysmon service
 Write-Host "Starting Sysmon service...
 Start-Service -Name Sysmon
+#sysmon -c #shows info about sysmon
 
+SNORT
 
 
 
@@ -71,9 +73,6 @@ https://medium.com/@olafhartong/sysmon-14-0-fileblockexecutable-13d7ba3dff3e
 
 
 
-`sysmon64.exe –accepteula –i c:\windows\config.xml`   
-
-* `sysmon -c` shows info about sysmon  
 
 
 Creating a separate folder for Sysinternals tools and setting appropriate permissions to restrict access to authorized users only.
