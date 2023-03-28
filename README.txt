@@ -1,4 +1,4 @@
-# Sigma-and-Sysmon
+SYSMON
 
 # Create Sysmon directory
 New-Item -ItemType Directory -Path "C:\Sysmon"
