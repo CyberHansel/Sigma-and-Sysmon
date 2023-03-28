@@ -1,46 +1,65 @@
 ### SYSMON
 
-
 # Create Sysmon directory
-Write-Host "Creating Sysmon directory...
+Write-Host "Creating Sysmon directory..."
 New-Item -ItemType Directory -Path "C:\Sysinternals"
 # Download Sysmon
-Write-Host "Downloading Sysmon...
+Write-Host "Downloading Sysmon..."
 Invoke-WebRequest "https://download.sysinternals.com/files/Sysmon.zip" -OutFile "C:\Sysinternals\Sysmon.zip"
 # Extract Sysmon
-Write-Host "Extracting Sysmon...
+Write-Host "Extracting Sysmon..."
 Expand-Archive "C:\Sysinternals\Sysmon.zip" -DestinationPath "C:\Sysinternals"
 # Download Sysmon config for Neo23, alternatives SwiftOnSecurity and olafhartong
-Write-Host "Downloading Sysmon config...
+Write-Host "Downloading Sysmon config..."
 Invoke-WebRequest "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export-block.xml" -OutFile "C:\Sysinternals\sysmonconfig-export-block.xml"
 # Install Sysmon as a service
-Write-Host "Installing Sysmon as a service...
+Write-Host "Installing Sysmon as a service..."
 & "C:\Sysinternals\Sysmon.exe" -accepteula -i "C:\Sysinternals\sysmonconfig-export-block.xml"
 # Start Sysmon service
-Write-Host "Starting Sysmon service...
+Write-Host "Starting Sysmon service..."
 Start-Service -Name Sysmon
 #sysmon -c #shows info about sysmon
 
 ### AUTORUNS
 
-
 # Download Sysinternals Autoruns
-Write-Host "Downloading Sysinternals Autoruns...
+Write-Host "Downloading Sysinternals Autoruns..."
 Invoke-WebRequest "https://download.sysinternals.com/files/Autoruns.zip" -OutFile "C:\Sysinternals\Autoruns.zip"
 # Extract Sysinternals Autoruns
-Write-Host "Extracting Sysinternals Autoruns...
+Write-Host "Extracting Sysinternals Autoruns..."
 Expand-Archive "C:\Sysinternals\Autoruns.zip" -DestinationPath "C:\Sysinternals"
 # Add Sysinternals path to environment variable
-Write-Host "Adding Sysinternals directory path to environment variable...
+Write-Host "Adding Sysinternals directory path to environment variable..."
 $env:Path += ";$env:C:\Sysinternals"
 
+### TCPView
 
+# Download Sysinternals TCPView
+Write-Host "Downloading Sysinternals TCPView..."
+Invoke-WebRequest "https://download.sysinternals.com/files/TCPView.zip" -OutFile "C:\Sysinternals\TCPView.zip"
+# Extract Sysinternals TCPView.zip
+Write-Host "Extracting Sysinternals TCPView..."
+Expand-Archive "C:\Sysinternals\TCPView.zip" -DestinationPath "C:\Sysinternals"
 
+### ProcessMonitor
 
+# Download Sysinternals ProcessMonitor
+Write-Host "Downloading Sysinternals ProcessMonitor..."
+Invoke-WebRequest "https://download.sysinternals.com/files/ProcessMonitor.zip" -OutFile "C:\Sysinternals\ProcessMonitor.zip"
+# Extract Sysinternals ProcessMonitor.zip
+Write-Host "Extracting Sysinternals ProcessMonitor..."
+Expand-Archive "C:\Sysinternals\ProcessMonitor.zip" -DestinationPath "C:\Sysinternals"
 
+### AccessEnum and ShareEnum
 
-
-
+# Download Sysinternals AccessEnum and ShareEnum
+Write-Host "Downloading Sysinternals AccessEnum and ShareEnum..."
+Invoke-WebRequest "https://download.sysinternals.com/files/AccessEnum.zip" -OutFile "C:\Sysinternals\AccessEnum.zip"
+Invoke-WebRequest "https://download.sysinternals.com/files/ShareEnum.zip" -OutFile "C:\Sysinternals\ShareEnum.zip"
+# Extract Sysinternals AccessEnum.zip and ShareEnum.zip
+Write-Host "Extracting Sysinternals AccessEnum and ShareEnum..."
+Expand-Archive "C:\Sysinternals\AccessEnum.zip" -DestinationPath "C:\Sysinternals"
+Expand-Archive "C:\Sysinternals\ShareEnum.zip" -DestinationPath "C:\Sysinternals"
 
 
 
