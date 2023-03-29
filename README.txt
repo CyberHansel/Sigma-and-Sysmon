@@ -74,6 +74,8 @@ Install npcap   https://npcap.com/#download
 Download latest Snort rules     https://www.snort.org/downloads/#rule-downloads   
 Download latest Rules and copy to Snort folder  
 
+$env:PATH += ";C:\Snort"
+
 etc/snort.conf   configure:  
 	ipvar 10.11.10.1/24 any
 	var RULE_PATH ../rules  
