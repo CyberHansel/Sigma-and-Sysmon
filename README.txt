@@ -76,6 +76,9 @@ Download latest Rules and copy to Snort folder
 
 $env:PATH += ";C:\Snort"
 
+snort -i 1 -c C:\Snort\etc\snort.conf -T
+
+
 etc/snort.conf   configure:  
 	ipvar 10.11.10.1/24 any
 	var RULE_PATH ../rules  
