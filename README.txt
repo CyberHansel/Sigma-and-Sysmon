@@ -117,39 +117,22 @@ Save and test the task to ensure it runs correctly.
 You can also use command-line tools like schtasks.exe to create and manage tasks, which can be useful for scripting and automation.
 
 ---------------------
+YARA 
+
+#Download latest Yara https://github.com/VirusTotal/yara/releases/latest
 
 
-etc/snort.conf   configure:  
-	ipvar 10.11.10.1/24 any
-	var RULE_PATH ../rules  
-	var SO_RULE_PATH ../so_rules  
-	var PREPROC_RULE_PATH ../preproc_rules  
-	var WHITE_LIST_PATH ../rules  
-	var BLACK_LIST_PATH ../rules same path as /rules before  
-	182 config logdir: C:\Snort\log  
-	dynamicpreprocessor directory C:\Snort\lib\snort_dynamicpreprocessor  
-	dynamicengine C:\Snort\lib\snort_dynamicengine\sf_engine.dll  
-	
-	COMMENT OUT THESE:  
-	#dynamicdetection directory /usr/local/lib/snort_dynamicrules  
-	#preprocessor normalize_ip4  
-	#preprocessor normalize_tcp: block, rsv, pad, urp, req_urg, req_pay, req_urp, ips, ecn stream  
-	#preprocessor normalize_icmp4  
-	#preprocessor normalize_ip6  
-	#preprocessor normalize_icmp6  
-	
-	"whitelist $WHITE_LIST_PATH/white_list.rules, \		change to "...ATH/white_list, \"
-	"blacklist $BLACK_LIST_PATH/black_list.rules" 		change to "..._PATH/black_list"  
-	
-	Converted back slashes to forward slashes in lines":  
-	"# site specific rules  
-	include $RULE_PATH/local.rules  
-	include $RULE_PATH\app-detect.rules  
-	include $RULE_PATH\attack-responses.rules  
-	include $RULE_PATH\backdoor.rules  
-	include $RULE_PATH\bad-traffic.rules" 
-
-
+# Change directory to Downloads folder
+cd $HOME\Downloads
+# Find the path of the YARA zip file that begins with "yara" and ends with "win64.zip"
+$zipPath = Get-ChildItem -Path . -Filter "yara*win64.zip" | Select-Object -ExpandProperty FullName
+# Create a new directory for YARA
+New-Item -ItemType Directory -Path C:\Yara
+# Extract the YARA zip file to the YARA directory
+Expand-Archive -Path $zipPath -DestinationPath C:\Yara
+# Move the YARA executables to the YARA directory
+Move-Item -Path C:\Yara\yara64.exe -Destination C:\Yara
+Move-Item -Path C:\Yara\yarac64.exe -Destination C:\Yara
 
 
 
