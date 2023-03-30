@@ -82,6 +82,42 @@ $env:PATH += ";C:\Snort"
 > netstat -aon # which processes are using which network connections
 > Start-Process -FilePath "C:\Snort\bin\snort.exe" -ArgumentList "-c C:\Snort\etc\snort.conf -i 1" -NoNewWindow
 
+-------------------
+cd C:\Snort\bin
+start /B snort.exe -i 1 -c C:\Snort\etc\snort.conf -A console
+
+
+
+Save the file with a .bat extension, for example "start-snort.bat".
+
+Press the Windows key + R to open the Run dialog box.
+
+Type "shell:startup" and press Enter. This will open the Startup folder.
+
+Right-click in the folder and select "New" > "Shortcut".
+
+Browse to the location of the batch script you created earlier, select it, and click "Next".
+
+Give the shortcut a name, for example "Start Snort".
+
+Click "Finish" to create the shortcut.
+------------------
+
+
+WINDOWS TASK SCHEDULER
+
+Yes, Windows has a built-in task scheduler that allows you to schedule tasks to run automatically at specific times or events. This is similar to the Linux cron job scheduler. You can use the Windows Task Scheduler to run a variety of tasks, such as running scripts, launching programs, sending emails, and more.
+
+To access the Task Scheduler in Windows, you can use the following steps:
+
+Open the Start menu and search for "Task Scheduler" or open the Control Panel and click on "Administrative Tools" > "Task Scheduler".
+Click on "Create Basic Task" or "Create Task" to create a new task.
+Follow the prompts to set up the task, including setting the trigger (when the task should run) and the action (what the task should do).
+Save and test the task to ensure it runs correctly.
+You can also use command-line tools like schtasks.exe to create and manage tasks, which can be useful for scripting and automation.
+
+---------------------
+
 
 etc/snort.conf   configure:  
 	ipvar 10.11.10.1/24 any
