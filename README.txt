@@ -203,7 +203,11 @@ AccessChk is a powerful tool that requires some technical expertise to use effec
 --------------------------  
 
 ## Suricata (Instead of Snort)
-Download https://suricata.io/download/  
+Download https://suricata.io/download/ 
+
+https://www.freecodecamp.org/news/home-network-security-with-suricata-raspberrypi4-python/
+
+
 
 ## Wazuh (Instead of OSSEC) server instals on Linux, agent can be win or unix
 https://documentation.wazuh.com/current/installation-guide/index.html  
