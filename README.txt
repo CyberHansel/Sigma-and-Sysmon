@@ -76,7 +76,11 @@ Download latest Rules and copy to Snort folder
 
 $env:PATH += ";C:\Snort"
 
-snort -i 1 -c C:\Snort\etc\snort.conf -T
+> snort -i 1 -c C:\Snort\etc\snort.conf -T
+> Get-NetAdapter
+> snort.exe -W
+> netstat -aon # which processes are using which network connections
+> Start-Process -FilePath "C:\Snort\bin\snort.exe" -ArgumentList "-c C:\Snort\etc\snort.conf -i 1" -NoNewWindow
 
 
 etc/snort.conf   configure:  
